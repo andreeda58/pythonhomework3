@@ -1,0 +1,6 @@
+<h2>Total Books by Genre</h2>
+<ul>
+  {% for genre in stats %}
+    <li>{{ genre.get_name_display }}: {{ genre.total_books }} book(s)</li>
+  {% endfor %}
+</ul>

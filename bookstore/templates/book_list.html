@@ -1,0 +1,16 @@
+<h1>All Books</h1>
+<div>{{total_books}}</div>
+<ul>
+  {% for book in books %}
+    <li>
+      <strong>{{ book.title }}</strong><br>
+      Authors:
+      {% for author in book.authors.all %}
+        {{ author.first_name }} {{ author.last_name }}{% if not forloop.last %}, {% endif %}
+      {% endfor %}
+      <br>Genre: {{ book.genre }}<br>Rating: {{ book.rating }}
+    </li>
+  {% empty %}
+    <li>No books available.</li>
+  {% endfor %}
+</ul>
